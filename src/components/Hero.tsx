@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 opacity-60">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-dark/40 to-charcoal-dark/95"></div>
         <img 
-          src="https://source.unsplash.com/SPDsag6JYlE" 
+          src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83"
           alt="Stadium aerial view" 
           className="w-full h-full object-cover object-center"
           loading="eager" 
@@ -49,7 +49,7 @@ const Hero = () => {
               loaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
             }`}
           >
-            Commercial advisors who turn big ideas into measurable wins.
+            Commercial advisors who turn big ideas into measurable results.
           </p>
           
           <button 
