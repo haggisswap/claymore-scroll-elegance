@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import WhyDifferent from "@/components/WhyDifferent";
 import Services from "@/components/Services";
-import FeaturedWins from "@/components/FeaturedWins";
 import ContactForm from "@/components/ContactForm";
 
 const Index = () => {
@@ -26,7 +25,6 @@ const Index = () => {
       <About />
       <WhyDifferent />
       <Services />
-      <FeaturedWins />
       <ContactForm />
     </div>
   );
