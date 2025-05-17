@@ -34,8 +34,8 @@ const About = () => {
       <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden">
         <div className="absolute inset-0 parallax">
           <img 
-            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
-            alt="Broadcasting media equipment" 
+            src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1"
+            alt="TV broadcasting studio with cameras and equipment" 
             className="w-full h-full object-cover"
             loading="lazy"
           />

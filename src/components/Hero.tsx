@@ -23,8 +23,8 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 opacity-60">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-dark/40 to-charcoal-dark/95"></div>
         <img 
-          src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83"
-          alt="Stadium aerial view" 
+          src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211"
+          alt="Sports stadium with crowd" 
           className="w-full h-full object-cover object-center"
           loading="eager" 
         />
