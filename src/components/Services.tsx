@@ -29,33 +29,33 @@ const Services = () => {
   const services = [
     {
       title: "Commercial Strategy",
-      icon: "💼",
-      description: "Aligning business models with market opportunities."
+      description: "Aligning business models with market opportunities.",
+      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&h=300&fit=crop"
     },
     {
       title: "Financial Modeling",
-      icon: "📊",
-      description: "Data-driven forecasts and scenario planning."
+      description: "Data-driven forecasts and scenario planning.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop"
     },
     {
       title: "Data Analysis & Insights",
-      icon: "📈",
-      description: "Turning complex data into actionable intelligence."
+      description: "Turning complex data into actionable intelligence.",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop"
     },
     {
       title: "Digital Product Dev + AI",
-      icon: "🤖",
-      description: "Building next-gen digital solutions with AI integrations."
+      description: "Building next-gen digital solutions with AI integrations.",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop"
     },
     {
       title: "Content Production & Management",
-      icon: "🎬",
-      description: "Creating and distributing high-value content assets."
+      description: "Creating and distributing high-value content assets.",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop"
     },
     {
       title: "Project Delivery Excellence",
-      icon: "✅",
-      description: "Managing complex initiatives to successful completion."
+      description: "Managing complex initiatives to successful completion.",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop"
     },
   ];
 
@@ -73,24 +73,30 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className={`group p-6 md:p-8 bg-charcoal-dark rounded-lg border border-charcoal hover:border-copper transition-all duration-500 cursor-pointer ${
+              className={`relative p-6 md:p-8 bg-charcoal-dark rounded-lg border border-charcoal overflow-hidden ${
                 visible 
                   ? "opacity-100 transform-none" 
                   : "opacity-0 translate-y-10"
               }`}
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
-              <div className="mb-4 text-3xl md:text-4xl group-hover:scale-110 transition-transform duration-300">
-                {service.icon}
+              <div className="absolute inset-0 opacity-20">
+                <img 
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               
-              <h3 className="text-xl md:text-2xl font-bold mb-3 text-offwhite group-hover:text-copper transition-colors duration-300">
-                {service.title}
-              </h3>
-              
-              <p className="text-offwhite/70 group-hover:text-offwhite/90 transition-colors duration-300">
-                {service.description}
-              </p>
+              <div className="relative z-10">
+                <h3 className="text-xl md:text-2xl font-bold mb-3 text-offwhite">
+                  {service.title}
+                </h3>
+                
+                <p className="text-offwhite/70">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

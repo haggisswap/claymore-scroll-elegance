@@ -8,13 +8,6 @@ const Hero = () => {
     setLoaded(true);
   }, []);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section 
       id="hero" 
@@ -51,15 +44,6 @@ const Hero = () => {
           >
             Commercial advisors who turn big ideas into measurable results.
           </p>
-          
-          <button 
-            onClick={scrollToContact}
-            className={`px-8 py-3 bg-copper text-offwhite text-lg md:text-xl rounded-md transition-all hover:bg-opacity-90 hover:scale-105 duration-1000 delay-600 ${
-              loaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
-            }`}
-          >
-            Let's Talk
-          </button>
         </div>
       </div>
     </section>

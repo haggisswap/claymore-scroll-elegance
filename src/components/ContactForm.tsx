@@ -1,143 +1,78 @@
 
-import React, { useState } from "react";
-import { Linkedin } from "lucide-react";
+import React from "react";
+import { Linkedin, Instagram } from "lucide-react";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 1000);
-  };
-
   return (
     <section 
       id="contact" 
       className="snap-section min-h-screen flex items-center bg-charcoal-dark py-16 px-6 md:px-12"
     >
-      <div className="container max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center text-offwhite">
+      <div className="container max-w-5xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-offwhite">
           Get in <span className="text-copper">Touch</span>
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block mb-2 text-offwhite">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full p-3 bg-charcoal border border-charcoal rounded-md focus:outline-none focus:ring-2 focus:ring-copper text-offwhite"
-                />
-              </div>
+        <div className="max-w-2xl mx-auto">
+          <div className="mb-8">
+            <h3 className="text-2xl font-playfair font-bold mb-6 text-copper">Contact Information</h3>
+            
+            <div className="space-y-4 text-offwhite/80">
+              <p className="flex items-center justify-center gap-2">
+                <span className="text-copper font-bold">Location:</span> 
+                Claymore Ventures FZCO, Dubai
+              </p>
               
-              <div>
-                <label htmlFor="email" className="block mb-2 text-offwhite">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full p-3 bg-charcoal border border-charcoal rounded-md focus:outline-none focus:ring-2 focus:ring-copper text-offwhite"
-                />
-              </div>
+              <p className="flex items-center justify-center gap-2">
+                <span className="text-copper font-bold">Email:</span> 
+                <a href="mailto:hello@claymoreventures.com" className="hover:text-copper transition-colors">
+                  hello@claymoreventures.com
+                </a>
+              </p>
               
-              <div>
-                <label htmlFor="message" className="block mb-2 text-offwhite">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full p-3 bg-charcoal border border-charcoal rounded-md focus:outline-none focus:ring-2 focus:ring-copper text-offwhite"
-                />
-              </div>
-              
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="px-6 py-3 bg-copper text-offwhite rounded-md transition-all hover:bg-opacity-90 disabled:opacity-70 disabled:cursor-not-allowed w-full"
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </button>
-              
-              {submitted && (
-                <div className="mt-4 p-3 bg-green-500/20 border border-green-500/30 text-green-400 rounded-md animate-fade-in">
-                  Message sent successfully. We'll be in touch soon!
-                </div>
-              )}
-            </form>
+              <p className="flex items-center justify-center gap-2">
+                <span className="text-copper font-bold">Phone:</span> 
+                +971 50 123 4567
+              </p>
+            </div>
           </div>
           
-          <div className="flex flex-col justify-between">
-            <div>
-              <h3 className="text-2xl font-playfair font-bold mb-6 text-copper">Contact Information</h3>
-              
-              <div className="space-y-4 text-offwhite/80">
-                <p className="flex items-center gap-2">
-                  <span className="text-copper font-bold">Location:</span> 
-                  Claymore Ventures FZCO, Dubai
-                </p>
-                
-                <p className="flex items-center gap-2">
-                  <span className="text-copper font-bold">Email:</span> 
-                  hello@claymore-ventures.com
-                </p>
-                
-                <p className="flex items-center gap-2">
-                  <span className="text-copper font-bold">Phone:</span> 
-                  +971 50 123 4567
-                </p>
-              </div>
-            </div>
+          <div>
+            <h3 className="text-xl font-playfair font-bold mb-6 text-copper">Follow Us</h3>
             
-            <div className="mt-8 md:mt-0">
-              <h3 className="text-xl font-playfair font-bold mb-4 text-copper">Connect With Us</h3>
+            <div className="flex justify-center gap-4">
+              <a 
+                href="https://www.tiktok.com/@claymoreventures" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block p-3 bg-charcoal rounded-full hover:bg-copper/20 transition-colors"
+              >
+                <svg className="h-6 w-6 text-offwhite" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+              </a>
               
               <a 
-                href="https://linkedin.com" 
+                href="https://www.instagram.com/claymoreventures/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block p-3 bg-charcoal rounded-full hover:bg-copper/20 transition-colors"
+              >
+                <Instagram className="h-6 w-6 text-offwhite" />
+              </a>
+              
+              <a 
+                href="https://www.linkedin.com/company/claymoreventures/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-block p-3 bg-charcoal rounded-full hover:bg-copper/20 transition-colors"
               >
                 <Linkedin className="h-6 w-6 text-offwhite" />
               </a>
-              
-              <div className="mt-6">
-                <div className="h-1 w-16 bg-copper"></div>
-              </div>
+            </div>
+            
+            <div className="mt-8">
+              <div className="h-1 w-16 bg-copper mx-auto"></div>
             </div>
           </div>
         </div>
