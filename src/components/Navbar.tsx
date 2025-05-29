@@ -8,17 +8,18 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
     };
 
-    document.addEventListener("scroll", handleScroll, { passive: true });
+    // Check initial scroll position
+    handleScroll();
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      document.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrolled]);
+  }, []);
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -32,7 +33,7 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12",
         scrolled 
-          ? "bg-charcoal-dark/90 shadow-md backdrop-blur-sm" 
+          ? "bg-charcoal-dark/95 shadow-lg backdrop-blur-sm" 
           : "bg-transparent"
       )}
     >
