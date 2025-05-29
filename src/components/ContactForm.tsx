@@ -29,11 +29,6 @@ const ContactForm = () => {
                   hello@claymoreventures.com
                 </a>
               </p>
-              
-              <p className="flex items-center justify-center gap-2">
-                <span className="text-copper font-bold">Phone:</span> 
-                +971 50 123 4567
-              </p>
             </div>
           </div>
           
