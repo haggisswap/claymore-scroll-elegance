@@ -29,7 +29,7 @@ const WhyDifferent = () => {
   const points = [
     "Battle-tested operators, not ivory-tower theorists.",
     "Middle-East roots + global experience.", 
-    "We measure success in outcomes, not billable hours."
+    "We deliver both - smart thinking that charts the path forward and the practical delivery expertise to make it happen now."
   ];
 
   return (
@@ -40,7 +40,7 @@ const WhyDifferent = () => {
       <div className="container max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-offwhite">
-            Why We're <span className="text-copper">Different</span>
+            Why <span className="text-copper">Claymore?</span>
           </h2>
           
           <blockquote 

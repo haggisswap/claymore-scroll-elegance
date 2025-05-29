@@ -38,11 +38,11 @@ const Hero = () => {
           </h1>
           
           <p 
-            className={`text-xl md:text-2xl lg:text-3xl mb-8 md:mb-12 max-w-3xl mx-auto text-offwhite/90 transition-all duration-1000 delay-300 ${
+            className={`text-xl md:text-2xl lg:text-3xl mb-8 md:mb-12 max-w-4xl mx-auto text-offwhite/90 transition-all duration-1000 delay-300 ${
               loaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
             }`}
           >
-            Commercial advisors who turn big ideas into measurable results.
+            Claymore unites six tightly-integrated disciplines - strategy, delivery, content, digital, data, and finance - so you move from board-room idea to bottom-line result with a single, accountable partner.
           </p>
         </div>
       </div>
