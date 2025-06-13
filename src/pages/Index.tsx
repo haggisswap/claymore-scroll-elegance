@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import WhyDifferent from "@/components/WhyDifferent";
 import Services from "@/components/Services";
 import ContactForm from "@/components/ContactForm";
 
@@ -23,7 +22,6 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
-      <WhyDifferent />
       <Services />
       <ContactForm />
     </div>

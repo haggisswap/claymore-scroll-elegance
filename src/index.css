@@ -51,6 +51,8 @@
   
   body {
     @apply bg-charcoal text-offwhite font-montserrat;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -64,6 +66,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    /* Disable parallax on mobile for better performance */
+    @media (max-width: 768px) {
+      background-attachment: scroll;
+    }
   }
   
   .text-shadow {
@@ -87,9 +93,28 @@
   scroll-snap-type: y mandatory;
   height: 100vh;
   overflow-y: scroll;
+  /* Improve scroll performance on mobile */
+  -webkit-overflow-scrolling: touch;
 }
 
 .snap-section {
   scroll-snap-align: start;
-  height: 100vh;
+  /* Ensure sections work properly on mobile */
+  min-height: 100vh;
+  min-height: 100dvh; /* Use dynamic viewport height for better mobile support */
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  .snap-container {
+    /* Disable snap scrolling on mobile for better UX */
+    scroll-snap-type: none;
+  }
+  
+  .snap-section {
+    /* Allow natural scrolling on mobile */
+    scroll-snap-align: none;
+    min-height: auto;
+    padding-top: 80px; /* Account for fixed header */
+  }
 }
