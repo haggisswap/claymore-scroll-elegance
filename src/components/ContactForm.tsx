@@ -6,7 +6,7 @@ const ContactForm = () => {
   return (
     <section 
       id="contact" 
-      className="snap-section min-h-screen flex items-center bg-charcoal-dark py-16 px-6 md:px-12"
+      className="snap-section min-h-screen flex items-center bg-charcoal-dark py-8 px-6 md:px-12"
     >
       <div className="container max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-offwhite">

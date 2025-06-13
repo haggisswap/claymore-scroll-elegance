@@ -1,6 +1,9 @@
+
 import { useEffect, useState } from "react";
+
 const PullQuote = () => {
   const [visible, setVisible] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -9,17 +12,24 @@ const PullQuote = () => {
     }, {
       threshold: 0.3
     });
+
     const section = document.getElementById("pullquote");
     if (section) {
       observer.observe(section);
     }
+
     return () => {
       if (section) {
         observer.unobserve(section);
       }
     };
   }, []);
-  return <section id="pullquote" className="snap-section min-h-screen flex items-center bg-charcoal-dark px-6 md:px-12 py-[32px]">
+
+  return (
+    <section 
+      id="pullquote" 
+      className="snap-section min-h-screen flex items-center bg-charcoal px-6 md:px-12 py-[16px]"
+    >
       <div className="container max-w-4xl mx-auto text-center">
         <div className={`transition-all duration-1000 ${visible ? "opacity-100 transform-none" : "opacity-0 translate-y-10"}`}>
           <blockquote className="text-3xl md:text-4xl lg:text-5xl font-bold text-offwhite font-playfair italic relative">
@@ -31,6 +41,8 @@ const PullQuote = () => {
           <div className={`h-1 w-24 bg-copper mx-auto mt-12 transition-all duration-1000 delay-300 ${visible ? "opacity-100 transform-none" : "opacity-0 scale-x-0"}`}></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default PullQuote;
