@@ -19,11 +19,6 @@ const ContactForm = () => {
             
             <div className="space-y-4 text-offwhite/80">
               <p className="flex items-center justify-center gap-2">
-                <span className="text-copper font-bold">Location:</span> 
-                Claymore Ventures FZCO, Dubai
-              </p>
-              
-              <p className="flex items-center justify-center gap-2">
                 <span className="text-copper font-bold">Email:</span> 
                 <a href="mailto:hello@claymoreventures.com" className="hover:text-copper transition-colors">
                   hello@claymoreventures.com

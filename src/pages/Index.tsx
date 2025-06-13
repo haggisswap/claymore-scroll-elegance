@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import PullQuote from "@/components/PullQuote";
 import ContactForm from "@/components/ContactForm";
 
 const Index = () => {
@@ -23,6 +24,7 @@ const Index = () => {
       <Hero />
       <About />
       <Services />
+      <PullQuote />
       <ContactForm />
     </div>
   );

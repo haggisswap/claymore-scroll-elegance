@@ -36,14 +36,6 @@ const Hero = () => {
             <span className="text-copper">Delivery</span>
             <span className="text-copper">.</span>
           </h1>
-          
-          <p 
-            className={`text-xl md:text-2xl lg:text-3xl mb-8 md:mb-12 max-w-4xl mx-auto text-offwhite/90 transition-all duration-1000 delay-300 ${
-              loaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
-            }`}
-          >
-            Claymore unites six tightly-integrated disciplines - strategy, delivery, content, digital, data, and finance - so you move from board-room idea to bottom-line result with a single, accountable partner.
-          </p>
         </div>
       </div>
     </section>

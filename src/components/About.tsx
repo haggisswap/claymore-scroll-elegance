@@ -54,7 +54,7 @@ const About = () => {
           </h2>
           
           <p className="text-lg md:text-xl mb-6 text-offwhite/80">
-            Born from frustration with endless slide-ware, Claymore pairs sharp strategy with disciplined execution. Headquartered in Dubai, trusted across GCC and beyond.
+            Born from frustration with endless slide-ware, Claymore pairs sharp strategy with disciplined execution. Providing commercial advisory and trusted guidance across GCC and beyond, headquartered in Dubai.
           </p>
           
           <div 
