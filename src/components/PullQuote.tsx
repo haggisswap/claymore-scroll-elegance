@@ -26,9 +26,9 @@ const PullQuote = () => {
   }, []);
 
   return (
-    <section 
-      id="pullquote" 
-      className="snap-section min-h-screen flex items-center bg-charcoal px-6 md:px-12 py-[16px]"
+    <section
+      id="pullquote"
+      className="snap-start flex items-center bg-charcoal px-6 md:px-12 py-16"
     >
       <div className="container max-w-4xl mx-auto text-center">
         <div className={`transition-all duration-1000 ${visible ? "opacity-100 transform-none" : "opacity-0 translate-y-10"}`}>
