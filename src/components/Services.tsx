@@ -47,11 +47,13 @@ const Services = () => {
           What We <span className="text-copper">Do</span>
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible"
+        >
           {services.map((service, index) => (
             <div
               key={index}
-              className={`relative p-6 md:p-8 bg-charcoal-dark rounded-lg border border-charcoal overflow-hidden transition-all duration-1000 ${
+              className={`relative shrink-0 w-4/5 md:w-auto snap-center p-6 md:p-8 bg-charcoal-dark rounded-lg border border-charcoal overflow-hidden transition-all duration-1000 ${
                 inView
                   ? "opacity-100 transform-none"
                   : "opacity-0 translate-y-10"
@@ -59,7 +61,7 @@ const Services = () => {
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               <div className="absolute inset-0 opacity-20">
-                <img 
+                <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover"
