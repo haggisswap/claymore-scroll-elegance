@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Instagram, Linkedin, Menu } from "lucide-react";
@@ -15,19 +14,17 @@ const Navbar = () => {
       const scrollTop = container ? container.scrollTop : window.scrollY;
       setScrolled(scrollTop > 10);
     };
-
+    
     // Check initial scroll position in case page loads scrolled
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    container?.addEventListener("scroll", handleScroll, { passive: true });
-
+    const target = container || window;
+    target.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      container?.removeEventListener("scroll", handleScroll);
+      target.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -39,11 +36,16 @@ const Navbar = () => {
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12",
+        "sticky top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12",
         scrolled
           ? "bg-[#1a202c] shadow-lg backdrop-blur-sm"
           : "bg-transparent"
       )}
+    >
+      {/* nav content here */}
+    </nav>
+  );
+};
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div>
