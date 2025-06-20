@@ -32,13 +32,10 @@ const About = () => {
       className="snap-section flex flex-col md:flex-row md:h-screen bg-charcoal"
     >
       <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden">
-        <div className="absolute inset-0 parallax">
-          <img 
-            src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1"
-            alt="TV broadcasting studio with cameras and equipment" 
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
+        <div
+          className="absolute inset-0 parallax"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1')" }}
+        >
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/70 to-transparent"></div>
         </div>
       </div>
