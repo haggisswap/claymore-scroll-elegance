@@ -10,19 +10,19 @@ const Navbar = () => {
 
   useEffect(() => {
     const container = document.getElementById("scroll-container");
+    const target = container || window;
 
     const handleScroll = () => {
       const scrollTop = container ? container.scrollTop : window.scrollY;
-      const isScrolled = scrollTop > 10;
-      setScrolled(isScrolled);
+      setScrolled(scrollTop > 10);
     };
 
-    // Check initial scroll position
+    // Check initial scroll position in case page loads scrolled
     handleScroll();
 
-    (container || window).addEventListener("scroll", handleScroll, { passive: true });
+    target.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      (container || window).removeEventListener("scroll", handleScroll);
+      target.removeEventListener("scroll", handleScroll);
     };
   }, []);
   
