@@ -9,17 +9,20 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    const container = document.getElementById("scroll-container");
+    const target = container || window;
+
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      setScrolled(isScrolled);
+      const scrollTop = container ? container.scrollTop : window.scrollY;
+      setScrolled(scrollTop > 10);
     };
 
-    // Check initial scroll position
+    // Check initial scroll position in case page loads scrolled
     handleScroll();
-    
-    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    target.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      target.removeEventListener("scroll", handleScroll);
     };
   }, []);
   
@@ -35,8 +38,8 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12",
-        scrolled 
-          ? "bg-charcoal-dark/95 shadow-lg backdrop-blur-sm" 
+        scrolled
+          ? "bg-[#1a202c] shadow-lg backdrop-blur-sm"
           : "bg-transparent"
       )}
     >
