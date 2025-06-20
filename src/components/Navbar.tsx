@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div>
           <img
-            src="/lovable-uploads/a40db039-1d09-4acb-99af-3b07f3f682b5.png"
+            src={`${import.meta.env.BASE_URL}lovable-uploads/a40db039-1d09-4acb-99af-3b07f3f682b5.png`}
             alt="Claymore Ventures Logo"
             role="button"
             aria-label="Home"
