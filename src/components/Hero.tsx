@@ -10,8 +10,8 @@ const Hero = () => {
       className="relative snap-section flex items-center justify-center md:h-screen overflow-hidden bg-charcoal-dark"
     >
       <div
-        className="absolute inset-0 z-0"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211')" }}
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1600&q=80')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-dark/40 to-charcoal-dark/95"></div>
       </div>
