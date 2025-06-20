@@ -1,30 +1,7 @@
 
-import { useEffect, useState } from "react";
-
+import useInView from "@/hooks/useInView";
 const Services = () => {
-  const [visible, setVisible] = useState(false);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-    
-    const section = document.getElementById("services");
-    if (section) {
-      observer.observe(section);
-    }
-    
-    return () => {
-      if (section) {
-        observer.unobserve(section);
-      }
-    };
-  }, []);
+  const { ref, inView } = useInView({ threshold: 0.2 });
 
   const services = [
     {
@@ -61,6 +38,7 @@ const Services = () => {
 
   return (
     <section
+      ref={ref}
       id="services"
       className="snap-section md:h-screen flex items-center bg-charcoal py-16 px-6 md:px-12"
     >
@@ -74,8 +52,8 @@ const Services = () => {
             <div 
               key={index}
               className={`relative p-6 md:p-8 bg-charcoal-dark rounded-lg border border-charcoal overflow-hidden ${
-                visible 
-                  ? "opacity-100 transform-none" 
+                inView
+                  ? "opacity-100 transform-none"
                   : "opacity-0 translate-y-10"
               }`}
               style={{ transitionDelay: `${200 + index * 100}ms` }}

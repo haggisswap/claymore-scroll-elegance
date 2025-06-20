@@ -1,14 +1,17 @@
 
 import React from "react";
+import useInView from "@/hooks/useInView";
 import { Linkedin, Instagram } from "lucide-react";
 
 const ContactForm = () => {
+  const { ref, inView } = useInView({ threshold: 0.2 });
   return (
     <section
+      ref={ref}
       id="contact"
       className="snap-section md:min-h-screen flex items-center bg-charcoal-dark py-8 px-6 md:px-12"
     >
-      <div className="container max-w-5xl mx-auto text-center">
+      <div className={`container max-w-5xl mx-auto text-center transition-all duration-1000 ${inView ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'}` }>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-offwhite">
           Get in <span className="text-copper">Touch</span>
         </h2>

@@ -1,29 +1,25 @@
 
-import { useEffect, useState } from "react";
-
+import useInView from "@/hooks/useInView";
 const Hero = () => {
-  const [loaded, setLoaded] = useState(false);
-  
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
+  const { ref, inView } = useInView({ threshold: 0.1 });
 
   return (
     <section
+      ref={ref}
       id="hero"
       className="relative snap-section flex items-center justify-center md:h-screen overflow-hidden bg-charcoal-dark"
     >
       <div
-        className="absolute inset-0 z-0 parallax"
+        className="absolute inset-0 z-0"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-dark/40 to-charcoal-dark/95"></div>
       </div>
 
       <div className="container relative z-10 px-6 md:px-12 max-w-7xl mx-auto text-center">
-        <div 
+        <div
           className={`transition-all duration-1000 ${
-            loaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
+            inView ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
           }`}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-shadow">
