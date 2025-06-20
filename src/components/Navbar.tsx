@@ -10,6 +10,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const container = document.getElementById("scroll-container");
+    // Listen to the main scroll container (or fallback to window) so the
+    // navbar can toggle a solid background when the page is scrolled.
     const target = container || window;
 
     const handleScroll = () => {
