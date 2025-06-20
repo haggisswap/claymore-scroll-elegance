@@ -27,9 +27,9 @@ const About = () => {
   }, []);
 
   return (
-    <section 
-      id="about" 
-      className="snap-section flex flex-col md:flex-row h-screen bg-charcoal"
+    <section
+      id="about"
+      className="snap-section flex flex-col md:flex-row md:h-screen bg-charcoal"
     >
       <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden">
         <div className="absolute inset-0 parallax">

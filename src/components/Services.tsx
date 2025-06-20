@@ -60,9 +60,9 @@ const Services = () => {
   ];
 
   return (
-    <section 
-      id="services" 
-      className="snap-section h-screen flex items-center bg-charcoal py-16 px-6 md:px-12"
+    <section
+      id="services"
+      className="snap-section md:h-screen flex items-center bg-charcoal py-16 px-6 md:px-12"
     >
       <div className="container max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center text-offwhite">
