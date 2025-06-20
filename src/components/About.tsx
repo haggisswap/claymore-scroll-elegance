@@ -12,7 +12,10 @@ const About = () => {
       <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?auto=format&fit=crop&w=1200&q=80')" }}
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1624961149991-fe35c964fa83?auto=format&fit=crop&w=1200&q=80')",
+          }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/70 to-transparent"></div>
         </div>
