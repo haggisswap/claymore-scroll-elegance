@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Instagram, Linkedin, Menu } from "lucide-react";
@@ -17,12 +16,14 @@ const Navbar = () => {
       setScrolled(isScrolled);
     };
 
-    // Check initial scroll position
+    // Check initial scroll position in case page loads scrolled
     handleScroll();
 
-    (container || window).addEventListener("scroll", handleScroll, { passive: true });
+    const target = container || window;
+    target.addEventListener("scroll", handleScroll, { passive: true });
+    
     return () => {
-      (container || window).removeEventListener("scroll", handleScroll);
+      target.removeEventListener("scroll", handleScroll);
     };
   }, []);
   
@@ -37,7 +38,7 @@ const Navbar = () => {
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12",
+        "sticky top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12",
         scrolled
           ? "bg-blue-500 shadow-lg backdrop-blur-sm"
           : "bg-transparent"
