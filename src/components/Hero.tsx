@@ -9,9 +9,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <section 
-      id="hero" 
-      className="relative snap-section flex items-center justify-center h-screen overflow-hidden bg-charcoal-dark"
+    <section
+      id="hero"
+      className="relative snap-section flex items-center justify-center md:h-screen overflow-hidden bg-charcoal-dark"
     >
       <div className="absolute inset-0 z-0 opacity-60">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-dark/40 to-charcoal-dark/95"></div>
