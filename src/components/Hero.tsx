@@ -7,7 +7,7 @@ const Hero = () => {
     <section
       ref={ref}
       id="hero"
-      className="relative snap-section flex items-center justify-center md:h-screen overflow-hidden bg-charcoal-dark"
+      className="relative snap-section flex items-center justify-center min-h-[60vh] md:h-screen overflow-hidden bg-charcoal-dark"
     >
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
