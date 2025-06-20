@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Instagram, Linkedin, Menu } from "lucide-react";
@@ -10,24 +9,24 @@ const Navbar = () => {
 
   useEffect(() => {
     const container = document.getElementById("scroll-container");
-    // Listen to the main scroll container (or fallback to window) so the
-    // navbar can toggle a solid background when the page is scrolled.
     const target = container || window;
 
     const handleScroll = () => {
       const scrollTop = container ? container.scrollTop : window.scrollY;
-      setScrolled(scrollTop > 10);
+      const isScrolled = scrollTop > 10;
+      setScrolled(isScrolled);
     };
 
     // Check initial scroll position in case page loads scrolled
     handleScroll();
 
     target.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => {
       target.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -42,8 +41,13 @@ const Navbar = () => {
         "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12",
         scrolled
           ? "bg-[#1a202c] shadow-lg backdrop-blur-sm"
-          : "bg-transparent"
+          : ""
       )}
+    >
+      {/* nav content here */}
+    </nav>
+  );
+};
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div>
