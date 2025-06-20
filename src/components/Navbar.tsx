@@ -9,6 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const container = document.getElementById("scroll-container");
+    const target = container || window;
 
     const handleScroll = () => {
       const scrollTop = container ? container.scrollTop : window.scrollY;
@@ -19,14 +20,13 @@ const Navbar = () => {
     // Check initial scroll position in case page loads scrolled
     handleScroll();
 
-    const target = container || window;
     target.addEventListener("scroll", handleScroll, { passive: true });
-    
+
     return () => {
       target.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -38,11 +38,16 @@ const Navbar = () => {
   return (
     <nav 
       className={cn(
-        "sticky top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12",
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12",
         scrolled
-          ? "bg-blue-500 shadow-lg backdrop-blur-sm"
-          : "bg-transparent"
+          ? "bg-[#1a202c] shadow-lg backdrop-blur-sm"
+          : ""
       )}
+    >
+      {/* nav content here */}
+    </nav>
+  );
+};
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div>
