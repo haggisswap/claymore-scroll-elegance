@@ -27,7 +27,7 @@ const Services = () => {
     {
       title: "Content Production & Management",
       description: "Content creation that delivers results. We specialize in media that audiences want to consume and that makes commercial sense.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1543336472-fcf478c443db?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Project Delivery Excellence",
