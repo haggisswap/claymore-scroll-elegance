@@ -9,12 +9,12 @@ const Navbar = () => {
 
   useEffect(() => {
     const container = document.getElementById("scroll-container");
-    const target = container || window;
-
-    const handleScroll = () => {
       const scrollTop = container ? container.scrollTop : window.scrollY;
-      const isScrolled = scrollTop > 10;
-      setScrolled(isScrolled);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    container?.addEventListener("scroll", handleScroll, { passive: true });
+
+      window.removeEventListener("scroll", handleScroll);
+      container?.removeEventListener("scroll", handleScroll);
     };
 
     // Check initial scroll position in case page loads scrolled
