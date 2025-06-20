@@ -19,14 +19,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div id="scroll-container" className="snap-container">
+    <>
       <Navbar />
       <Hero />
       <About />
       <Services />
       <PullQuote />
       <ContactForm />
-    </div>
+    </>
   );
 };
 

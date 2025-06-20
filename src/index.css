@@ -47,6 +47,7 @@
   html {
     scroll-behavior: smooth;
     @apply scroll-smooth;
+    scroll-snap-type: y mandatory;
   }
   
   body {
@@ -91,10 +92,6 @@
 
 .snap-container {
   scroll-snap-type: y mandatory;
-  height: 100vh;
-  overflow-y: scroll;
-  /* Improve scroll performance on mobile */
-  -webkit-overflow-scrolling: touch;
 }
 
 .snap-section {
@@ -106,7 +103,7 @@
 
 /* Mobile-specific fixes */
 @media (max-width: 768px) {
-  .snap-container {
+  html {
     /* Disable snap scrolling on mobile for better UX */
     scroll-snap-type: none;
   }
