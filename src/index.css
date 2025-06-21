@@ -105,3 +105,25 @@
     padding-top: 80px; /* Account for fixed header */
   }
 }
+
+/* Hero-specific override for mobile full height - more specific */
+section.hero-section {
+  min-height: 100dvh !important;
+  height: 100dvh !important;
+}
+
+@supports not (height: 100dvh) {
+  section.hero-section {
+    min-height: 100vh !important;
+    height: 100vh !important;
+  }
+}
+
+/* Override any snap-section mobile styles for hero specifically */
+@media (max-width: 768px) {
+  section.hero-section {
+    min-height: 100dvh !important;
+    height: 100dvh !important;
+    padding-top: 0 !important;
+  }
+}
